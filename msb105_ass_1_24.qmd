@@ -1,10 +1,10 @@
 ---
 title: "How can Quarto documents help with reproducibility in research?"
-author: "AG"
+author: "Håkon Ivesdal"
 date: last-modified
 date-format: "dddd D MMM, YYYY"
 csl: apa7.csl
-lang: en-GB
+lang: en-US
 format:
   html: default
   pdf:
@@ -20,6 +20,9 @@ abstract: "A very short abstract."
 ## Introduction
 
 Some smart stuff
+
+Citing test:
+@allaire2020 and [@allaire2020] 
 
 ## Literature review
 
@@ -37,5 +40,4 @@ Smart stuff from others
 ## Conclusion
 
 ## References
-
 
