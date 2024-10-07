@@ -54,8 +54,9 @@ These documents consist of sections of R code, referred to as computational comp
 In scientific writing, these narrative sections provide context, explain background, define objectives, set themes, and communicate results.
 The documents can then be rendered into formats such as .html, .pdf, .doc, or others using the knitr package [@grolemunda].
 
-Unlike R Markdown, Quarto does not rely on or require R.
-It was designed to be a multilingual tool from the start, supporting languages such as R, Python, JavaScript, and Julia, with the goal of being adaptable to future programming languages that may emerge [@zotero-84].
+Quarto is built on the principles of R Markdown, without relying or requiring R.
+It was designed to be a multilingual tool from the start, supporting languages such as R, Python, JavaScript, and Julia, with the goal of being adaptable to future programming languages that may emerge in the future [@zotero-84].
+Quarto documents are reproducible in essence, but what could be problematic?
 
 ### What problems remains and how can these be solved?
 
