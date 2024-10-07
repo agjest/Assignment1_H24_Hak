@@ -22,11 +22,20 @@ abstract: "A very short abstract."
 Some smart stuff
 
 Citing test:
-@allaire2020 and [@allaire2020] 
+
+@fidler2021 and [@allaire2020]
 
 ## Literature review
 
-Smart stuff from others
+What is reproducibility?
+
+In computational fields, reproducibility typically refers to the ability to reproduce computational results, focusing specifically on sharing and properly documenting data and code [@peng2011].
+
+When people refer to a "replication," they may mean one of the following: duplicating the methods, procedures, and analysis of a study (regardless of the outcomes) or duplicating the methods, procedures, analysis, and the results themselves [@fidler2021].
+These meanings describes two of the three parts that make up Research reproducibility.
+The former describes Methods reproducibility, while the latter describes Results reproducibility.
+Robustness and generalizability is the final part and takes account for the difference of outside effects on the experimental framework's setting [@goodman2016].
+Methods reproducibility is referred to as Reproducibility and Results reproducibility is referred to as Replicability by the NSF [@bollen2015].
 
 ## Discussion of the reseach question with some catching heading
 
@@ -34,10 +43,9 @@ Smart stuff from others
 
 ### What problems remains and how can these be solved?
 
-- Package version
-- R version, library versions
+-   Package version
+-   R version, library versions
 
 ## Conclusion
 
 ## References
-
