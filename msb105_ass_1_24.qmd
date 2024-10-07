@@ -19,7 +19,7 @@ abstract: "A very short abstract."
 
 ## Introduction
 
-Some smart stuff
+Describe problem...
 
 Citing test:
 
@@ -27,19 +27,35 @@ Citing test:
 
 ## Literature review
 
-What is reproducibility?
+Reproducibility and Replicability
 
 In computational fields, reproducibility typically refers to the ability to reproduce computational results, focusing specifically on sharing and properly documenting data and code [@peng2011].
 
 When people refer to a "replication," they may mean one of the following: duplicating the methods, procedures, and analysis of a study (regardless of the outcomes) or duplicating the methods, procedures, analysis, and the results themselves [@fidler2021].
 These meanings describes two of the three parts that make up Research reproducibility.
 The former describes Methods reproducibility, while the latter describes Results reproducibility.
-Robustness and generalizability is the final part and takes account for the difference of outside effects on the experimental framework's setting [@goodman2016].
-Methods reproducibility is referred to as Reproducibility and Results reproducibility is referred to as Replicability by the NSF [@bollen2015].
+Robustness and generalizability is the third part and takes into account the difference that outside effects have on the experimental framework's setting [@goodman2016].
 
-## Discussion of the reseach question with some catching heading
+The NSF (Subcommittee on Replicability in Science Advisory Committee to the National Science Foundation Directorate for Social, Behavioural, and Economic Sciences) refers Methods reproducibility simply as Reproducibility and Results reproducibility as Replicability [@bollen2015].
+This is also how it will be referred to in the rest of the paper.
+
+## Discussion of the research question with some catching heading
+
+### Reproducible documents
+
+Reproducibility is a criterion for achieving replicability, but it can be challenging to attain.
+Variations in software environments, hardware configurations, and system dependencies can all affect the ability to reproduce computational results accurately.
+Even small differences in versions of software or programming libraries may lead to discrepancies, making it difficult to replicate findings consistently.
 
 ### How can Quarto documents help with reproducibility?
+
+R Markdown enables the creation of computationally reproducible documents by allowing authors to embed R code for data processing, analysis, exploration, table generation, and visualization directly into structured electronic documents.
+These documents consist of sections of R code, referred to as computational components because they are produced through computational methods, along with narrative components.
+In scientific writing, these narrative sections provide context, explain background, define objectives, set themes, and communicate results.
+The documents can then be rendered into formats such as .html, .pdf, .doc, or others using the knitr package [@grolemunda].
+
+Unlike R Markdown, Quarto does not rely on or require R.
+It was designed to be a multilingual tool from the start, supporting languages such as R, Python, JavaScript, and Julia, with the goal of being adaptable to future programming languages that may emerge [@zotero-84].
 
 ### What problems remains and how can these be solved?
 
