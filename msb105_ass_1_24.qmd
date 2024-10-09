@@ -14,7 +14,7 @@ format:
     papersize: A4
     fig-pos: "H"
 bibliography: reproducibility.bib
-abstract: "Quarto documents are fully reproducible."
+abstract: "Quarto documents can enhance reproducibility in research by integrating code and data directly into the writing process."
 ---
 
 ## Introduction
@@ -71,6 +71,8 @@ Each project is given its own private package library, meaning that installing o
 
 ## Conclusion
 
-Quarto documents
+By embedding code and data directly within the document, Quarto ensures that the methodologies used to generate results are transparent and easily accessible.
+This ability to reproduce results is foundational to scientific research.
+While it cannot rectify past mistakes, it can pave the way for more reliable and trustworthy research findings in the future.
 
 ## References
