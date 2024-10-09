@@ -19,35 +19,30 @@ abstract: "A very short abstract."
 
 ## Introduction
 
-Describe problem...
-
-Citing test:
-
-@fidler2021 and [@allaire2020]
-
 ## Literature review
 
 Reproducibility and Replicability
 
-Reproduce and replicate have been used differently and indifferently from on and another, depending on the situation and the field.
-Normally to suggest a form of duplication of an event or study.
+Reproduce and replicate have been used differently and indifferently from one and another, depending on the situation and the field.
+Normally to suggest a form of duplication of a study.
 In computational fields, reproducibility typically refers to the ability to reproduce computational results, focusing specifically on sharing and properly documenting data and code [@peng2011].
 
 When people refer to a "replication," they may mean one of the following: duplicating the methods, procedures, and analysis of a study (regardless of the outcomes) or duplicating the methods, procedures, analysis, and the results themselves [@fidler2021].
+It is implied that the new data set determince the outcome as the other variables are constant.
 These meanings describes two of the three parts that make up Research reproducibility.
 The former describes Methods reproducibility, while the latter describes Results reproducibility.
 Robustness and generalizability is the third part and takes into account the difference that outside effects have on the experimental framework's setting [@goodman2016].
 
-The NSF (Subcommittee on Replicability in Science Advisory Committee to the National Science Foundation Directorate for Social, Behavioural, and Economic Sciences) refers Methods reproducibility simply as Reproducibility and Results reproducibility as Replicability [@bollen2015].
+The NSF (Subcommittee on Replicability in Science Advisory Committee to the National Science Foundation Directorate for Social, Behavioural, and Economic Sciences) defines Methods reproducibility simply as Reproducibility and Results reproducibility as Replicability [@bollen2015].
 This is also how it will be referred to in the rest of the paper.
 
 ## Discussion of the research question with some catching heading
 
 ### Reproducible documents
 
-Reproducibility is a criterion for achieving replicability, but it can be challenging to attain.
+Reproducibility is a precursor to achieving replicability, but it can be challenging to attain.
 Variations in software environments, hardware configurations, and system dependencies can all affect the ability to reproduce computational results accurately.
-Even small differences in versions of software or programming libraries may lead to discrepancies, making it difficult to replicate findings consistently.
+Even small differences in versions of software or programming libraries may lead to discrepancies, making it difficult to reproduce findings consistently.
 
 ### How can Quarto documents help with reproducibility?
 
@@ -61,15 +56,13 @@ It was designed to be a multilingual tool from the start, supporting languages s
 
 ### What problems remains and how can these be solved?
 
-Quarto documents are fully reproducible, when hardware and software is the same.
+Quarto documents are fully reproducible [@wickham2019], assuming hardware and software is accounted for.
 It is therefore important to document hardware, system, system-libraries, R-version and package-versions.
-The first three are relative easily done by using the built-in function: "sessionInfo()".
+The first four are relative easily done by using the built-in function: "sessionInfo()".
 However the packages are constantly updated and could be changed under the development of the document.
-It is therefore important to use renv for the project.
-Renv allows the
-
--   Package version
--   R version, library versions
+A solution to this problem is a package in RStudio called renv.
+Renv enables the creation of reproducible environments for R projects, ensuring consistent dependencies and package versions across different systems.
+Each project is given its own private package library, meaning that installing or updating a package for one project won't affect your other projects [@ushey].
 
 ## Conclusion
 
