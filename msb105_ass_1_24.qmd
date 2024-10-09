@@ -14,7 +14,7 @@ format:
     papersize: A4
     fig-pos: "H"
 bibliography: reproducibility.bib
-abstract: "Quarto documents can enhance reproducibility in research by integrating code and data directly into the writing process."
+abstract: "There is a recent reproducibility crisis in research. Quarto documents can help by enhancing reproducibility in research by integrating code and data directly in the document. The Quarto document could then be the entire submission to the journals."
 ---
 
 ## Introduction
@@ -59,6 +59,9 @@ Packages are collections of functions, data, and compiled code [@zotero-101].
 Some of these extensions are default or downloadable in the integrated development environment called RStudio [@zotero-103].
 Packages are a part of the adaptability and functionality of Quarto documents created in RStudio by potensially removing the need for third party applications.
 
+By integrating every part of the work after data extraction, the entire entry to a Journal could just be one Quarto document.
+This would ease the process of achieving the same results and be a helpful step towards replication.
+
 ### What problems remains and how can these be solved?
 
 Quarto documents are fully reproducible [@wickham2019], assuming hardware and software is accounted for.
@@ -71,8 +74,8 @@ Each project is given its own private package library, meaning that installing o
 
 ## Conclusion
 
-By embedding code and data directly within the document, Quarto ensures that the methodologies used to generate results are transparent and easily accessible.
-This ability to reproduce results is foundational to scientific research.
-While it cannot rectify past mistakes, it can pave the way for more reliable and trustworthy research findings in the future.
+The ability to reproduce results is foundational to scientific research and replication.
+By embedding code and data directly within the document, Quarto can ensure that the methods, analyses and calculation used to generate results are transparent and easily accessible.
+While it cannot rectify past mistakes, it can pave the way for more reliable published research findings in the future.
 
 ## References

@@ -1,0 +1,401 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={How can Quarto documents help with reproducibility in research?},
+  pdfauthor={Håkon Ivesdal},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{How can Quarto documents help with reproducibility in research?}
+\author{Håkon Ivesdal}
+\date{Wednesday 9 Oct, 2024}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+There is a recent reproducibility crisis in research. Quarto documents
+can help by enhancing reproducibility in research by integrating code
+and data directly in the document. The Quarto document could then be the
+entire submission to the journals.
+\end{abstract}
+
+
+\section{Introduction}\label{introduction}
+
+Scientific progress relies on the generation of robust, reliable
+knowledge that provides a solid foundation for future advancements.
+There is strong evidence suggesting that many of these findings may not
+endure over time. This reproducibility crisis in basic and preclinical
+research is largely attributed to a lack of adherence to proper
+scientific practices, compounded by the pressure to ``publish or
+perish'' (Begley \& Ioannidis, 2015). Reproducing an experiment is a key
+method scientists use to strengthen confidence in their conclusions and
+data handling is an important part of it (McNutt, 2014).
+
+The long-established archives at economics journals do not effectively
+support the reproduction of published results. Data-only archives, like
+those of the Journal of Business and Economic Statistics and the
+Economic Journal, are limited in part because many authors do not
+provide their data. Similarly, results published in the FRB St.~Louis
+Review are rarely reproducible, even when data and code are included in
+the journal's archive (McCullough et al., 2008).
+
+\section{Terminology}\label{terminology}
+
+Reproduce and replicate have been used differently and indifferently
+from one and another, depending on the situation and the field. Normally
+to suggest a form of duplication of a study. In computational fields,
+reproducibility typically refers to the ability to reproduce
+computational results, focusing specifically on sharing and properly
+documenting data and code (Peng, 2011).
+
+When people refer to a ``replication,'' they may mean one of the
+following: duplicating the methods, procedures, and analysis of a study
+(regardless of the outcomes) or duplicating the methods, procedures,
+analysis, and the results themselves (Fidler \& Wilcox, 2021). It is
+implied that the new data set determince the outcome as the other
+variables are constant. These meanings describes two of the three parts
+that make up Research reproducibility. The former describes Methods
+reproducibility, while the latter describes Results reproducibility.
+Robustness and generalizability is the third part and takes into account
+the difference that outside effects have on the experimental framework's
+setting (Goodman et al., 2016).
+
+The NSF (Subcommittee on Replicability in Science Advisory Committee to
+the National Science Foundation Directorate for Social, Behavioural, and
+Economic Sciences) defines Methods reproducibility simply as
+Reproducibility and Results reproducibility as Replicability (Bollen et
+al., 2015). This is also how it will be referred to in the rest of the
+paper.
+
+\section{How can Quarto documents help with
+reproducibility?}\label{how-can-quarto-documents-help-with-reproducibility}
+
+Reproducibility is a precursor to achieving replicability, but it can be
+challenging to attain. Reproducibility demands that the code and data
+used to generate a manuscript is fully integrated into it (\emph{About
+Quarto}, n.d.). In traditonal documents third party software are used to
+make the different models and calculations. R Markdown, which Quarto is
+based on, enables the creation of computationally reproducible documents
+by allowing authors to embed R code for data processing, analysis,
+exploration, table generation, and visualization directly into
+structured electronic documents. These documents consist of sections of
+R code, referred to as computational components because they are
+produced through computational methods, along with narrative components.
+In scientific writing, these narrative sections provide context, explain
+background, define objectives, set themes, and communicate results. The
+documents can then be rendered into formats such as .html, .pdf, .doc
+(Grolemund, n.d.).
+
+Quarto is the next generation version of R Markdown, without relying or
+requiring R. It was designed to be a multilingual tool from the start,
+supporting languages such as R, Python, JavaScript, and Julia, with the
+goal of being adaptable to future programming languages that may emerge
+in the future (\emph{FAQ for R Markdown Users}, n.d.). Packages are
+collections of functions, data, and compiled code (\emph{R Packages},
+n.d.). Some of these extensions are default or downloadable in the
+integrated development environment called RStudio (\emph{R Studio -
+Kunnskapsbasen - NTNU}, n.d.). Packages are a part of the adaptability
+and functionality of Quarto documents created in RStudio by potensially
+removing the need for third party applications.
+
+By integrating every part of the progress after data extraction, the
+entire entry to a Journal could just be one Quarto document. This would
+ease the process of achieving the same results and be a helpful step
+towards replication.
+
+\subsection{What problems remains and how can these be
+solved?}\label{what-problems-remains-and-how-can-these-be-solved}
+
+Quarto documents are fully reproducible (Wickham et al., 2019), assuming
+hardware and software is accounted for. It is therefore important to
+document hardware, system, system-libraries, R-version and
+package-versions. The first four are relative easily done by using the
+built-in function: ``sessionInfo()''. However the packages are
+constantly updated and could be updated under the development of the
+document. A solution to this problem is a package in RStudio called
+renv. Renv enables the creation of reproducible environments for R
+projects, ensuring consistent dependencies and package versions across
+different systems. Each project is given its own private package
+library, meaning that installing or updating a package for one project
+won't affect your other projects (Ushey, n.d.).
+
+\section{Conclusion}\label{conclusion}
+
+The ability to reproduce results is foundational to scientific research
+and replication. By embedding code and data directly within the
+document, Quarto can ensure that the methods, analyses and calculation
+used to generate results are transparent and easily accessible. While it
+cannot rectify past mistakes, it can pave the way for more reliable
+published research findings in the future.
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-zotero-97}
+\emph{About Quarto}. (n.d.). \url{https://quarto.org/about.html}
+
+\bibitem[\citeproctext]{ref-begley2015}
+Begley, C. G., \& Ioannidis, J. P. A. (2015). Reproducibility in
+science. \emph{Circulation Research}, \emph{116}(1), 116--126.
+\url{https://doi.org/10.1161/CIRCRESAHA.114.303819}
+
+\bibitem[\citeproctext]{ref-bollen2015}
+Bollen, K., Cacioppo, J. T., Krosnick, J. A., Olds, J. L., \& Kaplan, R.
+M. (2015). \emph{Social, {Behavioral}, and {Economic Sciences
+Perspectives} on {Robust} and {Reliable Science}} (Report of the
+Subcommittee on Replicability in Science Advisory Committee to the
+National Science Foundation Directorate for Social, Behavioral, and
+Economic Sciences). {NSF}.
+
+\bibitem[\citeproctext]{ref-zotero-84}
+\emph{FAQ for R Markdown Users}. (n.d.).
+\url{https://quarto.org/docs/faq/rmarkdown.html}
+
+\bibitem[\citeproctext]{ref-fidler2021}
+Fidler, F., \& Wilcox, J. (2021). \emph{Reproducibility of scientific
+results} (E. N. Zalta, Ed.; Summer 2021). Metaphysics Research Lab,
+Stanford University.
+\url{https://plato.stanford.edu/archives/sum2021/entries/scientific-reproducibility/}
+
+\bibitem[\citeproctext]{ref-goodman2016}
+Goodman, S. N., Fanelli, D., \& Ioannidis, J. P. A. (2016). What {Does
+Research Reproducibility Mean}? \emph{Science Translational Medicine},
+\emph{8}(341), 341ps12--341ps12.
+\url{https://doi.org/10.1126/scitranslmed.aaf5027}
+
+\bibitem[\citeproctext]{ref-grolemunda}
+Grolemund, G., J. J. Allaire. (n.d.). \emph{R {Markdown}: {The
+Definitive Guide}}. Retrieved September 15, 2021, from
+\url{https://bookdown.org/yihui/rmarkdown/}
+
+\bibitem[\citeproctext]{ref-mccullough2008}
+McCullough, B. D., McGeary, K. A., \& Harrison, T. D. (2008). Do
+economics journal archives promote replicable research? \emph{Canadian
+Journal of Economics/Revue Canadienne d'économique}, \emph{41}(4),
+1406--1420. \url{https://doi.org/10.1111/j.1540-5982.2008.00509.x}
+
+\bibitem[\citeproctext]{ref-mcnutt2014}
+McNutt, M. (2014). Reproducibility. \emph{Science}, \emph{343}(6168),
+229--229. \url{https://doi.org/10.1126/science.1250475}
+
+\bibitem[\citeproctext]{ref-peng2011}
+Peng, R. D. (2011). Reproducible {Research} in {Computational Science}.
+\emph{Science}, \emph{334}(6060), 1226--1227.
+\url{https://doi.org/10.1126/science.1213847}
+
+\bibitem[\citeproctext]{ref-zotero-101}
+\emph{R Packages}. (n.d.). \url{https://www.datacamp.com/doc/r/packages}
+
+\bibitem[\citeproctext]{ref-zotero-103}
+\emph{R studio - kunnskapsbasen - NTNU}. (n.d.).
+\url{https://i.ntnu.no/wiki/-/wiki/Norsk/R+Studio}
+
+\bibitem[\citeproctext]{ref-ushey}
+Ushey, K. (n.d.). \emph{renv/vignettes/renv.Rmd at main · rstudio/renv}.
+\url{https://github.com/rstudio/renv/blob/main/vignettes/renv.Rmd}
+
+\bibitem[\citeproctext]{ref-wickham2019}
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L., François,
+R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen,
+T., Miller, E., Bache, S., Müller, K., Ooms, J., Robinson, D., Seidel,
+D., Spinu, V., \ldots{} Yutani, H. (2019). Welcome to the tidyverse.
+\emph{Journal of Open Source Software}, \emph{4}(43), 1686.
+\url{https://doi.org/10.21105/joss.01686}
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
