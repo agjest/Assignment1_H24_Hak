@@ -14,7 +14,7 @@ format:
     papersize: A4
     fig-pos: "H"
 bibliography: reproducibility.bib
-abstract: "A very short abstract."
+abstract: "Quarto documents are fully reproducible."
 ---
 
 ## Introduction
@@ -24,9 +24,11 @@ There is strong evidence suggesting that many of these findings may not endure o
 This reproducibility crisis in basic and preclinical research is largely attributed to a lack of adherence to proper scientific practices, compounded by the pressure to "publish or perish" [@begley2015].
 Reproducing an experiment is a key method scientists use to strengthen confidence in their conclusions and data handling is an important part of it [@mcnutt2014].
 
-## Literature review
+The long-established archives at economics journals do not effectively support the reproduction of published results.
+Data-only archives, like those of the Journal of Business and Economic Statistics and the Economic Journal, are limited in part because many authors do not provide their data.
+Similarly, results published in the FRB St. Louis Review are rarely reproducible, even when data and code are included in the journal's archive [@mccullough2008].
 
-Reproducibility and Replicability
+## Terminology
 
 Reproduce and replicate have been used differently and indifferently from one and another, depending on the situation and the field.
 Normally to suggest a form of duplication of a study.
@@ -41,34 +43,34 @@ Robustness and generalizability is the third part and takes into account the dif
 The NSF (Subcommittee on Replicability in Science Advisory Committee to the National Science Foundation Directorate for Social, Behavioural, and Economic Sciences) defines Methods reproducibility simply as Reproducibility and Results reproducibility as Replicability [@bollen2015].
 This is also how it will be referred to in the rest of the paper.
 
-## Discussion of the research question with some catching heading
-
-### Reproducible documents
+## How can Quarto documents help with reproducibility?
 
 Reproducibility is a precursor to achieving replicability, but it can be challenging to attain.
-Variations in software environments, hardware configurations, and system dependencies can all affect the ability to reproduce computational results accurately.
-Even small differences in versions of software or programming libraries may lead to discrepancies, making it difficult to reproduce findings consistently.
-
-### How can Quarto documents help with reproducibility?
-
-R Markdown enables the creation of computationally reproducible documents by allowing authors to embed R code for data processing, analysis, exploration, table generation, and visualization directly into structured electronic documents.
+Reproducibility demands that the code and data used to generate a manuscript is fully integrated into it [@zotero-97].
+In traditonal documents third party software are used to make the different models and calculations.
+R Markdown, which Quarto is based on, enables the creation of computationally reproducible documents by allowing authors to embed R code for data processing, analysis, exploration, table generation, and visualization directly into structured electronic documents.
 These documents consist of sections of R code, referred to as computational components because they are produced through computational methods, along with narrative components.
 In scientific writing, these narrative sections provide context, explain background, define objectives, set themes, and communicate results.
-The documents can then be rendered into formats such as .html, .pdf, .doc, or others using the knitr package [@grolemunda].
+The documents can then be rendered into formats such as .html, .pdf, .doc [@grolemunda].
 
-Quarto is built on the principles of R Markdown, without relying or requiring R.
+Quarto is the next generation version of R Markdown, without relying or requiring R.
 It was designed to be a multilingual tool from the start, supporting languages such as R, Python, JavaScript, and Julia, with the goal of being adaptable to future programming languages that may emerge in the future [@zotero-84].
+Packages are collections of functions, data, and compiled code [@zotero-101].
+Some of these extensions are default or downloadable in the integrated development environment called RStudio [@zotero-103].
+Packages are a part of the adaptability and functionality of Quarto documents created in RStudio by potensially removing the need for third party applications.
 
 ### What problems remains and how can these be solved?
 
 Quarto documents are fully reproducible [@wickham2019], assuming hardware and software is accounted for.
 It is therefore important to document hardware, system, system-libraries, R-version and package-versions.
 The first four are relative easily done by using the built-in function: "sessionInfo()".
-However the packages are constantly updated and could be changed under the development of the document.
+However the packages are constantly updated and could be updated under the development of the document.
 A solution to this problem is a package in RStudio called renv.
 Renv enables the creation of reproducible environments for R projects, ensuring consistent dependencies and package versions across different systems.
 Each project is given its own private package library, meaning that installing or updating a package for one project won't affect your other projects [@ushey].
 
 ## Conclusion
+
+Quarto documents
 
 ## References
