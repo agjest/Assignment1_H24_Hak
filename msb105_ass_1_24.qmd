@@ -19,6 +19,10 @@ abstract: "A very short abstract."
 
 ## Introduction
 
+Scientific progress relies on the generation of robust, reliable knowledge that provides a solid foundation for future advancements.
+There is strong evidence suggesting that many of these findings may not endure over time.
+This reproducibility crisis in basic and preclinical research is largely attributed to a lack of adherence to proper scientific practices, compounded by the pressure to "publish or perish." \[
+
 ## Literature review
 
 Reproducibility and Replicability
