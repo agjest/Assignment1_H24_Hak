@@ -29,6 +29,8 @@ Citing test:
 
 Reproducibility and Replicability
 
+Reproduce and replicate have been used differently and indifferently from on and another, depending on the situation and the field.
+Normally to suggest a form of duplication of an event or study.
 In computational fields, reproducibility typically refers to the ability to reproduce computational results, focusing specifically on sharing and properly documenting data and code [@peng2011].
 
 When people refer to a "replication," they may mean one of the following: duplicating the methods, procedures, and analysis of a study (regardless of the outcomes) or duplicating the methods, procedures, analysis, and the results themselves [@fidler2021].
@@ -56,9 +58,15 @@ The documents can then be rendered into formats such as .html, .pdf, .doc, or ot
 
 Quarto is built on the principles of R Markdown, without relying or requiring R.
 It was designed to be a multilingual tool from the start, supporting languages such as R, Python, JavaScript, and Julia, with the goal of being adaptable to future programming languages that may emerge in the future [@zotero-84].
-Quarto documents are reproducible in essence, but what could be problematic?
 
 ### What problems remains and how can these be solved?
+
+Quarto documents are fully reproducible, when hardware and software is the same.
+It is therefore important to document hardware, system, system-libraries, R-version and package-versions.
+The first three are relative easily done by using the built-in function: "sessionInfo()".
+However the packages are constantly updated and could be changed under the development of the document.
+It is therefore important to use renv for the project.
+Renv allows the
 
 -   Package version
 -   R version, library versions
