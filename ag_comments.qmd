@@ -1,0 +1,21 @@
+---
+title: "ag comments"
+format: 
+  html: default
+  pdf: 
+    papersize: a4
+editor: visual
+---
+
+## Generelt
+
+Et flott mini-paper.
+Du skriver god engelsk, svarer på oppgaven og har en fin sammenhengene argumentasjon.
+Dokumentet er reproduserbart og genererer fin output både i html og pdf versjon.
+
+## Noen kommentarer
+
+-   In-text referanse kan være en fin teknikk for å veksle litt i siteringene. Jeg har endret første setning i siste avsnitt for å illustrer bruk.
+-   Etter typografiske regler skal navn på program/programvare settes i kursiv. Jeg ahr endret Quarto, R etc til kursiv.
+-   Anbefaler bruk av skikkelige anførselstegn, “ ” og ‘ ’ på engelsk. " er egentlig tegnet for tommer («inches»)
+-   Quarto har innebygd støtte for formatering av kommandoer/funksjoner som jeg anbefaler å bruke. Se endring for `sessionInfo().`
